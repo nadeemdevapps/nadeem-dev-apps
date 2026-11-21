@@ -17,9 +17,45 @@ interface Props {
 
 const { title, description, productName, productBase, jsonLd, developerSection = false, showPrivacy = true, showTerms = true } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const siteUrl = Astro.site?.href ?? 'https://nadeem-dev-apps.pages.dev/';
+// BreadcrumbList (SEO L2): Home → Work → product → sub-page. ProductLayout
+// serves the MsgLoop, Brew & Bean and Nydrex Suite pages; the product name
+// comes from the URL segment via a small mapping (falling back to the
+// productName prop), and the sub-page name (privacy / terms / features /
+// about) is the segment capitalised. Follows the JSON-LD style of the
+// FAQPage block in src/pages/products/msgloop.astro.
+const productDisplayNames: Record<string, string> = {
+  'msgloop': 'MsgLoop',
+  'brew-and-bean': 'Brew & Bean Cafe',
+  'nydrex-suite': 'Nydrex Suite',
+  'cv-creator-pro': 'CV Creator Pro',
+};
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const productSegment = pathSegments[1] ?? '';
+const subSegment = pathSegments[2] ?? '';
+const productDisplayName = productDisplayNames[productSegment] ?? productName;
+const breadcrumbItems: Record<string, unknown>[] = [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(base, siteUrl).href },
+  { '@type': 'ListItem', position: 2, name: 'Work', item: new URL(`${base}products/`, siteUrl).href },
+  { '@type': 'ListItem', position: 3, name: productDisplayName, item: new URL(productBase, siteUrl).href },
+];
+if (subSegment) {
+  breadcrumbItems.push({
+    '@type': 'ListItem',
+    position: 4,
+    name: subSegment.charAt(0).toUpperCase() + subSegment.slice(1),
+    item: new URL(Astro.url.pathname, siteUrl).href,
+  });
+}
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems,
+};
+const allJsonLd = [...(jsonLd ?? []), breadcrumbJsonLd];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd} noMainChrome>
+<BaseLayout title={title} description={description} jsonLd={allJsonLd} noMainChrome>
   <ProductNav productName={productName} productBase={productBase} showPrivacy={showPrivacy} showTerms={showTerms} />
   <slot />
   {developerSection && (

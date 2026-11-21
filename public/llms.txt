@@ -9,7 +9,7 @@
 - [Tsumly Features](https://nadeem-dev-apps.pages.dev/products/tsumly/features/)
 - [Tsumly Gallery](https://nadeem-dev-apps.pages.dev/products/tsumly/gallery/)
 - [Tsumly About](https://nadeem-dev-apps.pages.dev/products/tsumly/about/)
-- [Tsumly Download](https://nadeem-dev-apps.pages.dev/products/tsumly/download/)
+- [Tsumly Download](https://nadeem-dev-apps.pages.dev/products/tsumly/download/) — APK (r9): https://github.com/nadeemdevapps/downloads/releases/download/tsumly-v1.0.0-r9/tsumly-release.apk
 - [Kaizenly](https://nadeem-dev-apps.pages.dev/products/kaizenly/): a strict, local-first focus guard, built from scratch.
 - [Kaizenly Features](https://nadeem-dev-apps.pages.dev/products/kaizenly/features/)
 - [Kaizenly Gallery](https://nadeem-dev-apps.pages.dev/products/kaizenly/gallery/)
@@ -40,7 +40,12 @@
 - [Kaizenly](https://nadeem-dev-apps.pages.dev/products/kaizenly/)
 - [MsgLoop](https://nadeem-dev-apps.pages.dev/products/msgloop/)
 - [CV Creator Pro](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/)
+- [CV Creator Pro Features](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/features/)
+- [CV Creator Pro About](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/about/)
+- [Nydrex Suite](https://nadeem-dev-apps.pages.dev/products/nydrex-suite/)
 - [Brew & Bean Cafe](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/)
+- [Brew & Bean Cafe Features](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/features/)
+- [Brew & Bean Cafe About](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/about/)
 - [Tally Bar concept](https://nadeem-dev-apps.pages.dev/concepts/tally-bar/)
 - [Look Out Below concept](https://nadeem-dev-apps.pages.dev/concepts/look-out-below/)
 - [Stitch & Tan concept](https://nadeem-dev-apps.pages.dev/concepts/stitch-and-tan/)
@@ -68,7 +73,7 @@
 
 ## Optional
 
-- [Full site text (llms-full.txt)](https://nadeem-dev-apps.pages.dev/llms-full.txt): the full text of every page on this site in one Markdown document — Home, About, Products, Tsumly, Kaizenly, MsgLoop, Contact, and summaries of the legal pages.
+- [Full site text (llms-full.txt)](https://nadeem-dev-apps.pages.dev/llms-full.txt): the full text of every page on this site in one Markdown document — Home, About, Products, Tsumly, Kaizenly, MsgLoop, CV Creator Pro, Nydrex Suite, Brew & Bean Cafe, Contact, and summaries of the legal pages.
 - [Design system](https://github.com/nadeemdevapps/nadeem-dev-apps/blob/main/DESIGN.md)
 
 ## Markdown versions

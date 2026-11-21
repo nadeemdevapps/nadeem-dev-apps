@@ -4,7 +4,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const siteUrl = Astro.site?.href ?? 'https://nadeem-dev-apps.pages.dev/';
 const description =
-  'Nydrex Suite is an Electron desktop suite for retail — point of sale and inventory, with customer and supplier ledgers and reporting. Windows desktop app, v2.2.0 — no live site. Two free 5-day trials: Medical Suite for medical stores, Solar Suite for solar businesses.';
+  'Nydrex Suite is an Electron suite for retail — POS, inventory, ledgers and reporting. Windows, v2.2.0. Free 5-day trials: Medical and Solar Suites.';
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -20,7 +20,7 @@ const jsonLd = [
 ---
 
 <ProductLayout
-  title="Nydrex Suite — Retail Point of Sale & Inventory"
+  title="Nydrex Suite — Retail POS & Inventory"
   description={description}
   productName="Nydrex Suite"
   productBase={`${base}products/nydrex-suite/`}

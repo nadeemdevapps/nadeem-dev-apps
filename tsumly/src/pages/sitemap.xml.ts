@@ -1,14 +1,13 @@
 // Build-time sitemap endpoint: /sitemap.xml
 //
-// The @astrojs/sitemap integration only emits the index form
-// (sitemap-index.xml + sitemap-0.xml) — it has no option for a plain
-// sitemap.xml, which crawlers and tools expect at the conventional URL.
-// This endpoint provides that plain sitemap, generated at build time
-// from the actual page files in src/pages, so it can never go stale:
-// add or remove a page and the next build picks it up automatically.
-// The integration's sitemap-index.xml keeps working alongside it;
-// both list the same URLs.
+// The hand-built plain sitemap crawlers and tools expect at the
+// conventional URL, generated at build time from the actual page files
+// in src/pages, so it can never go stale: add or remove a page and the
+// next build picks it up automatically. This is the only sitemap the
+// site emits — the @astrojs/sitemap integration was removed, so no
+// sitemap-index.xml / sitemap-0.xml is generated.
 import type { APIRoute } from 'astro';
+import fs from 'node:fs';
 
 // Lazy glob: we only need the file paths (the keys), never the modules.
 const pageFiles = import.meta.glob('./**/*.astro');
@@ -22,21 +21,38 @@ function fileToRoute(file: string): string | null {
   return route; // '' for the home page, otherwise e.g. 'privacy'
 }
 
+function isoDate(date: Date): string {
+  return date.toISOString().slice(0, 10);
+}
+
+// Modification time of a source file in the repo, as an ISO date
+// (YYYY-MM-DD). Falls back to the build date when the file cannot be
+// read.
+function fileLastmod(file: string): string {
+  try {
+    return isoDate(fs.statSync(new URL(file, import.meta.url)).mtime);
+  } catch {
+    return isoDate(new Date());
+  }
+}
+
 export const prerender = true;
 
 export const GET: APIRoute = ({ site }) => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // '/nadeem-dev-apps/products/tsumly'
-  const urls = Object.keys(pageFiles)
-    .map(fileToRoute)
-    .filter((route): route is string => route !== null)
-    .sort()
-    .map((route) => {
-      // Trailing-slash form, matching what @astrojs/sitemap emits.
+  const entries = Object.keys(pageFiles)
+    .map((file) => ({ route: fileToRoute(file), lastmod: fileLastmod(file) }))
+    .filter(
+      (entry): entry is { route: string; lastmod: string } => entry.route !== null,
+    )
+    .sort((a, b) => (a.route < b.route ? -1 : a.route > b.route ? 1 : 0));
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries
+    .map(({ route, lastmod }) => {
+      // Trailing-slash form, matching what @astrojs/sitemap emitted.
       const path = route ? `${base}/${route}/` : `${base}/`;
-      return new URL(path, site).toString();
-    });
-  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
-    .map((url) => `  <url><loc>${url}</loc></url>`)
+      const url = new URL(path, site).toString();
+      return `  <url><loc>${url}</loc><lastmod>${lastmod}</lastmod></url>`;
+    })
     .join('\n')}\n</urlset>\n`;
   return new Response(body, {
     headers: { 'Content-Type': 'application/xml; charset=utf-8' },

@@ -5,11 +5,26 @@ import { projects } from '../../data/projects';
 import { concepts } from '../../data/concepts';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const siteUrl = Astro.site?.href ?? 'https://nadeem-dev-apps.pages.dev/';
+// ItemList (SEO L2): all 6 products + all 5 concepts, names and URLs taken
+// from the same data the cards render from (src/data/projects.ts,
+// src/data/concepts.ts).
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [...projects, ...concepts].map((project, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: project.name,
+    url: new URL(`${base}${project.link?.href ?? ''}`, siteUrl).href,
+  })),
+};
 ---
 
 <BaseLayout
   title="Selected Works by Nadeem Mazhar"
   description="Selected works by Nadeem Mazhar — 6 shipped products (Tsumly, Kaizenly, MsgLoop, CV Creator Pro, Nydrex Suite, Brew & Bean Cafe), plus 5 concept demos."
+  jsonLd={[itemListJsonLd]}
 >
   <section class="page-top">
     <div class="wrap">
@@ -33,7 +48,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <article class="project-card" data-tilt>
           <div class="field-img" aria-hidden="true"><span class="glyph">Gh</span></div>
           <div class="body">
-            <h3>More on GitHub</h3>
+            <h2>More on GitHub</h2>
             <span class="tag">github.com/nadeemdevapps</span>
             <p>The public repos — including this site — live on GitHub.</p>
             <a class="link" href="https://github.com/nadeemdevapps">Visit GitHub →</a>

@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const siteUrl = Astro.site?.href ?? 'https://nadeem-dev-apps.pages.dev/';
 const appUrl = 'https://cv-creator-pro.nadeem-devapps.workers.dev/';
 const description =
-  'CV Creator Pro is a one-page CV maker that runs entirely in your browser — fill it in, pick a look, download a clean A4 PDF. No account, no upload, nothing leaves your machine.';
+  'CV Creator Pro is a one-page CV maker that runs entirely in your browser — fill it in, pick a look, download a clean A4 PDF. No account, no upload.';
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -43,12 +43,21 @@ const faqs = [
       '“Copy AI prompt” copies a ready-made interview prompt. Paste it into ChatGPT, Claude, Gemini, or any LLM, let it interview you step by step, then copy its answers back into the form. There is no AI backend — the interview happens outside the app, and everything still stays in your browser.',
   },
 ];
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(base, siteUrl).href },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: new URL(`${base}products/`, siteUrl).href },
+    { '@type': 'ListItem', position: 3, name: 'CV Creator Pro', item: new URL(`${base}products/cv-creator-pro/`, siteUrl).href },
+  ],
+};
 ---
 
 <BaseLayout
   title="CV Creator Pro — One-Page CV Maker"
   description={description}
-  jsonLd={jsonLd}
+  jsonLd={[...jsonLd, breadcrumbLd]}
   noMainChrome
 >
   <ProductNav productName="CV Creator Pro" productBase={`${base}products/cv-creator-pro/`} showTerms={false} showMainSite={false} extraLinks={[{ label: 'Features', href: `${base}products/cv-creator-pro/features/` }, { label: 'About', href: `${base}products/cv-creator-pro/about/` }]} appLink={{ label: 'Open the app →', href: appUrl }} />

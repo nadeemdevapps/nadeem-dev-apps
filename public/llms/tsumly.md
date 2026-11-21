@@ -32,6 +32,7 @@ Tsumly is built by **Nadeem Mazhar**, a solo developer, as **Nadeem Dev Apps**. 
 - [Gallery](https://nadeem-dev-apps.pages.dev/products/tsumly/gallery/)
 - [About](https://nadeem-dev-apps.pages.dev/products/tsumly/about/)
 - [Download](https://nadeem-dev-apps.pages.dev/products/tsumly/download/)
+- [Download APK (r9)](https://github.com/nadeemdevapps/downloads/releases/download/tsumly-v1.0.0-r9/tsumly-release.apk)
 - [Privacy](https://nadeem-dev-apps.pages.dev/products/tsumly/privacy/)
 - [Terms](https://nadeem-dev-apps.pages.dev/products/tsumly/terms/)
 

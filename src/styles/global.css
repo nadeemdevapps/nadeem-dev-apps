@@ -561,7 +561,8 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
   flex-direction: column;
   flex: 1;
 }
-.project-card h3 {
+.project-card h3,
+.project-card h2 {
   font-size: 27px;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -686,7 +687,8 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
 
 /* About prose — 760px centred column, from the mockup. */
 .about-prose { max-width: 760px; margin: 0 auto; text-align: center; }
-.about-prose h3 {
+.about-prose h3,
+.about-prose h2 {
   font-size: clamp(28px, 4vw, 38px);
   font-weight: 700;
   letter-spacing: -0.03em;

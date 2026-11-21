@@ -18,12 +18,22 @@ const personLd = {
   url: new URL(`${base}about/`, siteUrl).href,
   sameAs: ['https://github.com/nadeemdevapps'],
 };
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(base, siteUrl).href },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: new URL(`${base}products/`, siteUrl).href },
+    { '@type': 'ListItem', position: 3, name: 'CV Creator Pro', item: new URL(`${base}products/cv-creator-pro/`, siteUrl).href },
+    { '@type': 'ListItem', position: 4, name: 'About', item: new URL(`${base}products/cv-creator-pro/about/`, siteUrl).href },
+  ],
+};
 ---
 
 <BaseLayout
-  title="About CV Creator Pro — A CV Without Handing Over Your Details"
+  title="About CV Creator Pro — Private by Design"
   description="Why CV Creator Pro exists: a one-page CV should not cost you an account, an upload, or your data. The story, and what makes it different."
-  jsonLd={[personLd]}
+  jsonLd={[personLd, breadcrumbLd]}
   noMainChrome
 >
   <ProductNav productName="CV Creator Pro" productBase={`${base}products/cv-creator-pro/`} showTerms={false} showMainSite={false} extraLinks={[{ label: 'Features', href: `${base}products/cv-creator-pro/features/` }, { label: 'About', href: `${base}products/cv-creator-pro/about/` }]} appLink={{ label: 'Open the app →', href: appUrl }} />

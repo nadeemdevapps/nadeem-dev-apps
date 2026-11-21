@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const siteUrl = Astro.site?.href ?? 'https://nadeem-dev-apps.pages.dev/';
 const liveUrl = 'https://brew-and-bean.nadeem-devapps.workers.dev/';
 const description =
-  'Brew & Bean Cafe is an animated cafe marketing and ordering site — a menu with prices in PKR, a cart, and orders sent straight to the cafe as a WhatsApp message. An assignment project, fully working end to end.';
+  'Brew & Bean Cafe is an animated cafe ordering site — menu in PKR, a cart, and orders sent via WhatsApp. An assignment project, fully working end to end.';
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -21,7 +21,7 @@ const jsonLd = [
 ---
 
 <ProductLayout
-  title="Brew & Bean Cafe — Animated Cafe Site"
+  title="Brew & Bean Cafe — Animated Cafe"
   description={description}
   productName="Brew & Bean Cafe"
   productBase={`${base}products/brew-and-bean/`}

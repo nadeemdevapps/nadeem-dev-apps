@@ -4,7 +4,7 @@
 
 This file is the full-text companion to [llms.txt](https://nadeem-dev-apps.pages.dev/llms.txt). It contains the full text of every page on this site, in reading order, so an AI system can read the whole site in a single request instead of crawling page by page. The text here matches the live pages; the legal pages at the end are summarized with links to the full text. Shorter per-product Markdown files are listed in [llms.txt](https://nadeem-dev-apps.pages.dev/llms.txt).
 
-Contents: [Home](https://nadeem-dev-apps.pages.dev/) · [About](https://nadeem-dev-apps.pages.dev/about/) · [Products](https://nadeem-dev-apps.pages.dev/products/) · [Tsumly](https://nadeem-dev-apps.pages.dev/products/tsumly/) · [Kaizenly](https://nadeem-dev-apps.pages.dev/products/kaizenly/) · [MsgLoop](https://nadeem-dev-apps.pages.dev/products/msgloop/) · [CV Creator Pro](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/) · [Brew & Bean Cafe](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/) · [Contact](https://nadeem-dev-apps.pages.dev/contact/) · [Legal pages](#legal-pages)
+Contents: [Home](https://nadeem-dev-apps.pages.dev/) · [About](https://nadeem-dev-apps.pages.dev/about/) · [Products](https://nadeem-dev-apps.pages.dev/products/) · [Tsumly](https://nadeem-dev-apps.pages.dev/products/tsumly/) · [Kaizenly](https://nadeem-dev-apps.pages.dev/products/kaizenly/) · [MsgLoop](https://nadeem-dev-apps.pages.dev/products/msgloop/) · [CV Creator Pro](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/) · [Nydrex Suite](https://nadeem-dev-apps.pages.dev/products/nydrex-suite/) · [Brew & Bean Cafe](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/) · [Contact](https://nadeem-dev-apps.pages.dev/contact/) · [Legal pages](#legal-pages)
 
 ---
 
@@ -145,7 +145,7 @@ His strengths are exploration, working with AI, UI design, planning, brainstormi
 
 ### Are Nadeem's apps free to use?
 
-Yes. Everything Nadeem makes is free to use right now — including Kaizenly's custom sessions of 3 to 12 hours. There is nothing to pay for.
+Yes. Everything Nadeem makes is free to use right now — including Kaizenly's custom sessions up to 12 hours (720 minutes). There is nothing to pay for.
 
 ### What are Tsumly, Kaizenly, and MsgLoop?
 
@@ -276,7 +276,7 @@ Tsumly is built by **Nadeem Mazhar**, a solo developer, as **Nadeem Dev Apps**. 
 
 More from Nadeem Dev Apps → https://nadeem-dev-apps.pages.dev/
 
-Tsumly pages: [Home](https://nadeem-dev-apps.pages.dev/products/tsumly/) · [Features](https://nadeem-dev-apps.pages.dev/products/tsumly/features/) · [Gallery](https://nadeem-dev-apps.pages.dev/products/tsumly/gallery/) · [About](https://nadeem-dev-apps.pages.dev/products/tsumly/about/) · [Download](https://nadeem-dev-apps.pages.dev/products/tsumly/download/) · [Privacy](https://nadeem-dev-apps.pages.dev/products/tsumly/privacy/) · [Terms](https://nadeem-dev-apps.pages.dev/products/tsumly/terms/) — full text: [llms-full.txt](https://nadeem-dev-apps.pages.dev/products/tsumly/llms-full.txt)
+Tsumly pages: [Home](https://nadeem-dev-apps.pages.dev/products/tsumly/) · [Features](https://nadeem-dev-apps.pages.dev/products/tsumly/features/) · [Gallery](https://nadeem-dev-apps.pages.dev/products/tsumly/gallery/) · [About](https://nadeem-dev-apps.pages.dev/products/tsumly/about/) · [Download](https://nadeem-dev-apps.pages.dev/products/tsumly/download/) · [APK (r9)](https://github.com/nadeemdevapps/downloads/releases/download/tsumly-v1.0.0-r9/tsumly-release.apk) · [Privacy](https://nadeem-dev-apps.pages.dev/products/tsumly/privacy/) · [Terms](https://nadeem-dev-apps.pages.dev/products/tsumly/terms/) — full text: [llms-full.txt](https://nadeem-dev-apps.pages.dev/products/tsumly/llms-full.txt)
 
 
 ---
@@ -430,6 +430,131 @@ MsgLoop was built by **Nadeem Mazhar**, a solo developer, as part of Nadeem Dev 
 
 ---
 
+## CV Creator Pro
+
+https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/
+
+# A one-page CV, made in your browser.
+
+CV Creator Pro is a **one-page CV maker** that runs entirely in your browser. Fill in your details, pick a colour theme and a template, and download a clean A4 PDF. **No account, no upload** — nothing leaves your machine.
+
+Free. Web. No account needed.
+
+Live app: https://cv-creator-pro.nadeem-devapps.workers.dev/
+
+## What it does
+
+- **Your details** — name, job title, photo, contact info, About me, Passion, Interests, Experience, Education, Skills, and Languages.
+- **Six colour themes** — Paper & Ink, Navy & Sun, Soft Sky, Forest, Terracotta, and Slate.
+- **Five templates** — Editorial, Sidebar, Elegant, Brutalist, and Classic. Every template works with every theme.
+- **One-page A4 PDF** — download the finished CV as a single A4 page (210 × 297 mm), never two.
+- **Saved in your browser** — every edit is saved and restored when you come back.
+- **Private by design** — no server, no account, no upload; the only third-party request is fonts from Google Fonts.
+
+## Four steps, then download.
+
+1. **Fill in your details.** Enter your name, job title, contact info, experience, education, skills, and languages. "Fill sample" loads example data so you can see how it looks; "Clear" resets the form.
+2. **Pick a theme and a template.** Six colour sets and five designs — mix any theme with any template.
+3. **Check the fit.** Word and entry limits keep the CV on a single A4 page, and the download step measures the page and warns you if anything would be clipped.
+4. **Download the PDF.** A clean one-page A4 PDF of the finished CV.
+
+## An honest caveat
+
+The downloaded PDF is a raster image — it looks exactly like the preview, but the text is not selectable and ATS parsers will not read it. If you need machine-readable text, use your browser's own Save as PDF from the preview, or paste the text into a plain-text CV.
+
+## Frequently asked questions
+
+### Does CV Creator Pro upload my CV anywhere?
+
+No. Everything runs in your browser: your details, your photo, and your choices are saved in the browser's own storage on your device and restored when you come back. There is no account and no server. The page loads fonts from Google Fonts, and nothing else leaves your machine.
+
+### Stuck on what to write?
+
+"Copy AI prompt" copies a ready-made interview prompt. Paste it into ChatGPT, Claude, Gemini, or any LLM, let it interview you step by step, then copy its answers back into the form. There is no AI backend — the interview happens outside the app, and everything still stays in your browser.
+
+## Built by Nadeem.
+
+CV Creator Pro was built by **Nadeem Mazhar**, a solo developer, as part of Nadeem Dev Apps.
+
+More from Nadeem Dev Apps → https://nadeem-dev-apps.pages.dev/
+
+CV Creator Pro pages: [Home](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/) · [Features](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/features/) · [About](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/about/) · [Privacy](https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/privacy/)
+
+
+---
+
+## Nydrex Suite
+
+https://nadeem-dev-apps.pages.dev/products/nydrex-suite/
+
+# Point of sale, inventory, and ledgers — on Windows.
+
+Nydrex Suite is an **Electron desktop suite for retail** — point of sale and inventory, with customer and supplier ledgers and reporting. It runs on Windows, on the shop's own machine.
+
+Windows desktop app. Latest release: v2.2.0. No live site.
+
+## What it does
+
+- **Point of sale and inventory** — sales, stock, and suppliers in one place.
+- **Customer and supplier ledgers** — customer and supplier accounts, tracked properly.
+- **Reporting** — the numbers behind the shop, readable at a glance.
+
+## Try it free — 5-day trial.
+
+Pick the build for your shop. The trial starts on first launch and locks after expiry. Setup installs it; Portable runs without installing.
+
+- **Nydrex Medical Suite — for medical stores**: Setup https://github.com/nadeemdevapps/downloads/releases/download/nydrex-medical-trial-v2.2.0/Nydrex-Suite-Setup-2.2.0.exe · Portable https://github.com/nadeemdevapps/downloads/releases/download/nydrex-medical-trial-v2.2.0/Nydrex-Suite-Portable-2.2.0.exe
+- **Nydrex Solar Suite — for solar businesses**: Setup https://github.com/nadeemdevapps/downloads/releases/download/nydrex-solar-trial-v2.2.0/Nydrex-Suite-Setup-2.2.0.exe · Portable https://github.com/nadeemdevapps/downloads/releases/download/nydrex-solar-trial-v2.2.0/Nydrex-Suite-Portable-2.2.0.exe
+
+## Built by Nadeem.
+
+Nydrex Suite is built by **Nadeem Mazhar**, a solo developer, as **Nadeem Dev Apps**.
+
+More from Nadeem Dev Apps → https://nadeem-dev-apps.pages.dev/
+
+Nydrex Suite pages: [Home](https://nadeem-dev-apps.pages.dev/products/nydrex-suite/)
+
+
+---
+
+## Brew & Bean Cafe
+
+https://nadeem-dev-apps.pages.dev/products/brew-and-bean/
+
+# A cafe site that takes your order — over WhatsApp.
+
+Brew & Bean Cafe is an **animated cafe marketing and ordering site**. Browse the menu, add dishes to a cart, and send the order straight to the cafe as a WhatsApp message. It is an **assignment project** — built to demonstrate a full ordering flow, working end to end.
+
+Live site: https://brew-and-bean.nadeem-devapps.workers.dev/
+
+## What it does
+
+- **A menu with prices in PKR** — browse the cafe menu with prices in PKR, and pick what you want.
+- **A cart that holds your order** — add dishes to a cart and review the order before you send it.
+- **Orders by WhatsApp** — your order goes straight to the cafe as a WhatsApp message — no account, no checkout form.
+- **Fully animated** — the whole site is animated — browsing the menu is part of the experience, not just a list.
+
+## Three steps to an order
+
+1. **Browse the menu.** Look through the dishes with their prices in PKR.
+2. **Add to the cart.** Add what you want and check the order before sending.
+3. **Send it on WhatsApp.** The order goes to the cafe as a WhatsApp message — that is the whole checkout.
+
+## An assignment, not a real cafe
+
+Brew & Bean Cafe was built as an assignment project, not for a real client or a real cafe. There is no real cafe behind this site, no real kitchen, and no food to buy. Do not treat it as a way to order food from a real business — the ordering flow is a working demonstration, nothing more.
+
+## Built by Nadeem.
+
+Brew & Bean Cafe was built by **Nadeem Mazhar**, a solo developer, as part of Nadeem Dev Apps.
+
+More from Nadeem Dev Apps → https://nadeem-dev-apps.pages.dev/
+
+Brew & Bean Cafe pages: [Home](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/) · [Features](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/features/) · [About](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/about/) · [Privacy](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/privacy/) · [Terms](https://nadeem-dev-apps.pages.dev/products/brew-and-bean/terms/)
+
+
+---
+
 ## Contact
 
 https://nadeem-dev-apps.pages.dev/contact/
@@ -492,6 +617,24 @@ MsgLoop collects no personal data: there is no account, no signup, and no analyt
 https://nadeem-dev-apps.pages.dev/products/msgloop/terms/
 
 MsgLoop is a WhatsApp sender, provided as-is: it sends one message many times, now or on a schedule, through WhatsApp Web inside the app, with no official WhatsApp API. Automating WhatsApp Web violates WhatsApp's Terms of Service, and repetitive bulk messaging can get a number temporarily or permanently banned, so use it at your own risk and only on numbers you own or have permission to message. Data stays local with no account and no server. Questions: nadeem.devapps@gmail.com.
+
+### CV Creator Pro Privacy Policy
+
+https://nadeem-dev-apps.pages.dev/products/cv-creator-pro/privacy/
+
+CV Creator Pro collects nothing: there is no account, no signup, and no analytics on your CV data, no advertising, and no tracking. Your details, your photo, and your choices stay in the browser's own storage on your device. The page loads fonts from Google Fonts — the only third-party request it makes. Questions: nadeem.devapps@gmail.com.
+
+### Brew & Bean Cafe Privacy Policy
+
+https://nadeem-dev-apps.pages.dev/products/brew-and-bean/privacy/
+
+Brew & Bean Cafe collects no personal data on this page: there is no account, no sign-up, and no form to fill in here. When you order on the live site, your order is sent as a WhatsApp message to the cafe — WhatsApp handles that message under its own terms, and Nadeem Dev Apps does not receive or store your order. Questions: nadeem.devapps@gmail.com.
+
+### Brew & Bean Cafe Terms of Use
+
+https://nadeem-dev-apps.pages.dev/products/brew-and-bean/terms/
+
+Brew & Bean Cafe is an animated cafe marketing and ordering site built as an assignment project, provided as-is: it is not a real cafe business, it was not built for a real client, and there is no real cafe, kitchen, or food behind it. The ordering flow is a working demonstration, not a way to buy food from a real cafe. Questions: nadeem.devapps@gmail.com.
 
 ### Privacy Policy (website)
 

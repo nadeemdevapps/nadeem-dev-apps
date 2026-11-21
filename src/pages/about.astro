@@ -3,6 +3,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const siteUrl = `https://nadeem-dev-apps.pages.dev${base}`;
+const faqs = [
+  {
+    question: 'Who is Nadeem Mazhar?',
+    answer:
+      'Nadeem Mazhar is a solo developer who runs Nadeem Dev Apps, a one-developer studio with no partners and no team. He plans, designs, and ships websites, Windows apps, Android apps, and backends, and his apps Tsumly and Kaizenly started as his own problems.',
+  },
+  {
+    question: 'What does Nadeem build?',
+    answer:
+      'Nadeem builds websites, Windows apps, Android apps, and backends — local-first or cloud, whichever the project needs. His shipped apps are local-first by design, with no account, no server, and no ads, because that is the right call for a personal tool, not a limitation on what he can build.',
+  },
+  {
+    question: 'How does Nadeem work with AI?',
+    answer:
+      'Nadeem plans the product, designs the interface, directs the build, and reviews everything before it ships, with AI tools doing the heavy lifting under his direction. The decisions are his: he explores a problem until he understands it, documents a clear plan, and ships only when the result works in daily use.',
+  },
+  {
+    question: "What are Nadeem's strengths?",
+    answer:
+      'His strengths are exploration, working with AI, UI design, planning, brainstorming, and problem-solving, with security analysis on every build. He is still learning some languages and knows the basics of others, but the job, as he puts it, was never typing syntax by hand.',
+  },
+  {
+    question: "Are Nadeem's apps free to use?",
+    answer:
+      "Yes. Everything Nadeem makes is free to use right now — including Kaizenly's custom sessions up to 12 hours (720 minutes). There is nothing to pay for.",
+  },
+  {
+    question: 'What are Tsumly, Kaizenly, and MsgLoop?',
+    answer:
+      "Tsumly is a local-first loan and ledger app that splits one repayment across several loans without merging them. Kaizenly is a strict focus guard for Android whose timed sessions keep distracting apps shut until the timer ends. MsgLoop is a WhatsApp message scheduler for Android — and because it automates WhatsApp, which WhatsApp's terms do not allow, bulk messaging can get a number banned.",
+  },
+  {
+    question: 'How can I contact Nadeem?',
+    answer:
+      'You can reach Nadeem at nadeem.devapps@gmail.com, or find his work on GitHub at github.com/nadeemdevapps, his only social link. The contact page also has a form that opens a pre-addressed email in your own mail app.',
+  },
+];
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -15,6 +61,7 @@ const jsonLd = [
     url: `${siteUrl}about/`,
     sameAs: ['https://github.com/nadeemdevapps'],
   },
+  faqJsonLd,
 ];
 ---
 
@@ -30,7 +77,7 @@ const jsonLd = [
       </div>
       <div class="about-prose">
         <div class="about-block">
-          <h3>I learn breadth-first</h3>
+          <h2>I learn breadth-first</h2>
           <p><strong>Matriculation (Biology) — Board of Intermediate and Secondary Education (BISE) Bahawalpur — 1018/1200 (~84%)</strong></p>
           <p>Biology was chosen on purpose: a little knowledge of every field makes targeted research easy when you need the detail. I've been using a laptop since <strong>grade 3</strong>.</p>
           <p><strong>UK Level 3 Extended Diploma in IT &amp; Cyber Security — Qualifi (UK) — Superior International Colleges, Rahim Yar Khan — 3rd semester, research internship next</strong></p>
@@ -68,14 +115,14 @@ const jsonLd = [
         <p class="now-line">Now: 3rd semester of the diploma; building with AI daily; open to internships.</p>
 
         <div class="about-block">
-          <h3>The plan is the skill</h3>
+          <h2>The plan is the skill</h2>
           <p>Anyone can get AI to write code. The difference is the process: a PRD, a design doc, clear goals — then phases, built one by one, each one tested before the next starts.</p>
           <p class="steps">PRD <span class="arr">→</span> Design doc <span class="arr">→</span> Goals <span class="arr">→</span> Phases <span class="arr">→</span> Tested, one by one.</p>
           <p class="honest">I don't claim deep mastery of any one language — AI writes the code; I own the plan, the design, and the testing.</p>
         </div>
 
         <div class="about-block">
-          <h3>AI-first, every day</h3>
+          <h2>AI-first, every day</h2>
           <p>My daily toolkit spans the whole AI landscape — and <strong>OpenCode</strong> is my primary agent CLI: multi-model, and friendly to a student budget.</p>
           <div class="tool-groups">
             <div class="tool-group">
@@ -111,13 +158,13 @@ const jsonLd = [
         </div>
 
         <div class="about-block">
-          <h3>Self-taught, doubt-free</h3>
+          <h2>Self-taught, doubt-free</h2>
           <p>Most of what I know is self-education: research until a doubt is actually cleared — mine, and other people's too. I've been <strong>Class Representative since grade 3</strong>, which is mostly that: hearing questions and finding answers.</p>
           <p>Along the way I also picked up <strong>accounting basics</strong> — assets, liabilities, debits and credits, debtors, creditors, and the accounting equation.</p>
         </div>
 
         <div class="about-block">
-          <h3>What I bring to an internship</h3>
+          <h2>What I bring to an internship</h2>
           <p>Open to internships in a software house, a bank, a company, or bookkeeping — and this is what I bring:</p>
           <ul>
             <li><strong>Planning and phased delivery</strong> — PRD → design doc → goals → phases, each one tested before the next starts.</li>
@@ -128,9 +175,27 @@ const jsonLd = [
         </div>
 
         <div class="about-block">
-          <h3>Why I build</h3>
+          <h2>Why I build</h2>
           <p class="honest">“I build for myself first. If a paid feature costs nothing to run — no server — it should be free.”</p>
           <p>That's why my finance app exists: the features I needed were paywalled elsewhere, so I built my own — and why Kaizenly has no premium tier at all.</p>
+        </div>
+
+        <div class="about-block faq-block">
+          <h2>Questions, answered.</h2>
+          <h3>Who is Nadeem Mazhar?</h3>
+          <p>Nadeem Mazhar is a solo developer who runs Nadeem Dev Apps, a one-developer studio with no partners and no team. He plans, designs, and ships websites, Windows apps, Android apps, and backends, and his apps Tsumly and Kaizenly started as his own problems.</p>
+          <h3>What does Nadeem build?</h3>
+          <p>Nadeem builds websites, Windows apps, Android apps, and backends — local-first or cloud, whichever the project needs. His shipped apps are local-first by design, with no account, no server, and no ads, because that is the right call for a personal tool, not a limitation on what he can build.</p>
+          <h3>How does Nadeem work with AI?</h3>
+          <p>Nadeem plans the product, designs the interface, directs the build, and reviews everything before it ships, with AI tools doing the heavy lifting under his direction. The decisions are his: he explores a problem until he understands it, documents a clear plan, and ships only when the result works in daily use.</p>
+          <h3>What are Nadeem's strengths?</h3>
+          <p>His strengths are exploration, working with AI, UI design, planning, brainstorming, and problem-solving, with security analysis on every build. He is still learning some languages and knows the basics of others, but the job, as he puts it, was never typing syntax by hand.</p>
+          <h3>Are Nadeem's apps free to use?</h3>
+          <p>Yes. Everything Nadeem makes is free to use right now — including Kaizenly's custom sessions up to 12 hours (720 minutes). There is nothing to pay for.</p>
+          <h3>What are Tsumly, Kaizenly, and MsgLoop?</h3>
+          <p>Tsumly is a local-first loan and ledger app that splits one repayment across several loans without merging them. Kaizenly is a strict focus guard for Android whose timed sessions keep distracting apps shut until the timer ends. MsgLoop is a WhatsApp message scheduler for Android — and because it automates WhatsApp, which WhatsApp's terms do not allow, bulk messaging can get a number banned.</p>
+          <h3>How can I contact Nadeem?</h3>
+          <p>You can reach Nadeem at nadeem.devapps@gmail.com, or find his work on GitHub at github.com/nadeemdevapps, his only social link. The contact page also has a form that opens a pre-addressed email in your own mail app.</p>
         </div>
       </div>
     </div>
@@ -154,5 +219,12 @@ const jsonLd = [
     letter-spacing: 0.04em;
     color: var(--color-ink-muted);
     margin-bottom: 8px;
+  }
+  /* FAQ: questions read as questions, not section headings. */
+  .about-prose .faq-block h2 { margin: 0 0 8px; }
+  .about-prose .faq-block h3 {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin: 28px 0 8px;
   }
 </style>
