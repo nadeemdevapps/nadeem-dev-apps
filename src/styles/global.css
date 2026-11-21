@@ -31,7 +31,6 @@
   --dark-card-muted: #b7b1a6;
   --tsumly-bg: #e8e1f7;
   --kaizenly-bg: #ecfbe1;
-  --demo-bg: #ece8df;
   --shadow: 0 1px 2px rgba(20, 19, 17, 0.05), 0 12px 32px -16px rgba(20, 19, 17, 0.18);
 
   --radius-xs: 4px;
@@ -72,7 +71,6 @@
   --dark-card-muted: #55524b;
   --tsumly-bg: #2c2547;
   --kaizenly-bg: #22331c;
-  --demo-bg: #26231f;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
 }
 
@@ -464,6 +462,11 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
   gap: 22px;
 }
 
+/* Odd one out: the last concept card and a lone tile (GitHub) span the
+   full row instead of leaving an empty half behind. */
+.concepts-grid .project-card:last-child { grid-column: 1 / -1; }
+.works-grid > .project-card:only-child { grid-column: 1 / -1; }
+
 /* Project cards — tilt / lift / glow, from the mockup. */
 .project-card {
   --glow: #0075de;
@@ -489,7 +492,11 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
 .project-card.cv { --glow: #0075de; }
 .project-card.nydrex { --glow: #f2a81d; }
 .project-card.brew { --glow: #c9711f; }
-.project-card.demo { background: var(--demo-bg); --glow: #8a8578; }
+.project-card.tally { --glow: #e07856; }
+.project-card.lookout { --glow: #d9c25a; }
+.project-card.stitch { --glow: #c9a06a; }
+.project-card.productsite { --glow: #ff6a3d; }
+.project-card.portfolio { --glow: #b98a2f; }
 .field-img {
   position: relative;
   height: 150px;
@@ -521,8 +528,6 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
   left: 8%;
   filter: blur(34px);
 }
-.project-card.demo .field-img::before,
-.project-card.demo .field-img::after { opacity: 0.25; }
 .glyph {
   position: absolute;
   inset: 0;

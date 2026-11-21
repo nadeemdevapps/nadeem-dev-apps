@@ -47,18 +47,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <p class="count">5 concept demos — inspiration templates, cleaned and rebranded</p>
       </div>
 
-      <div class="works-grid">
-        {concepts.map((concept) => (
-          <article class="project-card demo" data-tilt>
-            <div class="field-img" aria-hidden="true"><span class="glyph">{concept.glyph}</span></div>
-            <div class="body">
-              <h3>{concept.name}</h3>
-              <span class="tag">{concept.tag}</span>
-              <p>{concept.description}</p>
-              <a class="link" href={`${base}${concept.href}`}>{concept.label}</a>
-            </div>
-          </article>
-        ))}
+      <div class="works-grid concepts-grid">
+        {concepts.map((concept) => <ProjectCard project={concept} />)}
       </div>
     </div>
   </section>
