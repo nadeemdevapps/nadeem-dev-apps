@@ -462,6 +462,11 @@ html[data-theme-mode="system"] .theme-toggle .icon-moon { display: none; }
   gap: 22px;
 }
 
+/* Two grids stacked (products, then the GitHub tile) need the same 22px
+   between them that the rows inside a grid have — otherwise the tile
+   looks glued to the row above it. */
+.works-grid + .works-grid { margin-top: 22px; }
+
 /* Odd one out: the last concept card and a lone tile (GitHub) span the
    full row instead of leaving an empty half behind. */
 .concepts-grid .project-card:last-child { grid-column: 1 / -1; }
